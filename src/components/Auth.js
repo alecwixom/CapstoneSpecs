@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useState, useContext } from "react";
 import AuthContext from "../store/authContext";
+import './auth.css'
 
 const Auth = () => {
     const [register, setRegister] = useState(true)
@@ -37,7 +38,7 @@ const Auth = () => {
 
     return (
         <main>
-            <h1>Welcome!</h1>
+            <h4>Welcome!</h4>
             <form className='form auth-form' onSubmit={submitHandler}>
                 <input 
                     type='text' 

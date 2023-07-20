@@ -1,7 +1,7 @@
 import { useContext } from "react"
 import { NavLink } from "react-router-dom"
 import AuthContext from "../store/authContext"
-
+import './navbar.css'
 const Navbar = () => {
 const authCtx = useContext(AuthContext)
 
@@ -14,7 +14,7 @@ const authCtx = useContext(AuthContext)
     return (
         <header className="navbar flex-row">
             <div className="flex-row">
-                <h4>Alec's Website</h4>
+                <h4>Lift Share</h4>
             </div>
             <nav>
             {authCtx.token ? (

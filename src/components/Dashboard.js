@@ -3,6 +3,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 import AuthContext from "../store/authContext";
+import './dashboard.css'
 
 const Dashboard = () => {
     const { token, userId } = useContext(AuthContext);
@@ -45,7 +46,7 @@ const Dashboard = () => {
         <form onSubmit={handleSubmit}>
             {workouts.map((workout, index) => (
                 <div key={index}>
-                    <label>
+                    <label className="form-day">
                         Day of Week:
                         <input
                             type="text"
@@ -56,7 +57,8 @@ const Dashboard = () => {
                         />
                     </label>
                     <br />
-                    <label>
+                    <br />
+                    <label className="form-desc">
                         Workout Description:
                         <input
                             type="text"

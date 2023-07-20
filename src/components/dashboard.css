@@ -1,0 +1,44 @@
+form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  form div {
+    margin-bottom: 20px;
+  }
+  
+  form label {
+    font-weight: bold;
+    color: #ff4000;
+  }
+  
+  form input[type="text"] {
+    margin-top: 5px;
+    padding: 5px;
+    width: 100%;
+    height: 20px;
+  }
+  
+  form button {
+    background-color: #f57145;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  form button[type='button']:hover{
+    background-color: red;
+  }
+  
+  form button[type="button"] {
+    background-color: #ff847c;
+  }
+  
+  form button[type="submit"] {
+    background-color: #6fcf97;
+  }
+  

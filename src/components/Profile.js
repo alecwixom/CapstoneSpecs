@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState, useCallback } from 'react';
 import axios from 'axios';
+import './profile.css'
 
 import AuthContext from '../store/authContext';
 
@@ -66,8 +67,8 @@ const Profile = () => {
         <div>
           {posts.map(post => (
             <div key={post.id} className="post-card">
-              <h2>{post.dayOfWeek}</h2>
-              <h4>{post.user.username}</h4>
+              <h2>{post.user.username}</h2>
+              <h4>{post.dayOfWeek}</h4>
               <p>{post.description}</p>
               <div>
                 <button className="delete-btn" onClick={() => deletePost(post.id)}>
@@ -82,7 +83,7 @@ const Profile = () => {
         </div>
       ) : (
         <main>
-          <h1>You haven't posted yet!</h1>
+          <h4>You haven't posted a Schedule yet!</h4>
         </main>
       )}
 
