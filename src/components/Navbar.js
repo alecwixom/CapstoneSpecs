@@ -14,7 +14,7 @@ const authCtx = useContext(AuthContext)
     return (
         <header className="navbar flex-row">
             <div className="flex-row">
-                <h4>Lift Share</h4>
+                <h3>Lift Share</h3>
             </div>
             <nav>
             {authCtx.token ? (

@@ -77,6 +77,7 @@ const Dashboard = () => {
             <button type="button" onClick={handleAddWorkout}>
                 Add Workout
             </button>
+            <br />
             <button type="submit">Submit</button>
         </form>
     );

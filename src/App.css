@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Playfair+Display:wght@500&family=Raleway:wght@100;300;400&display=swap');
+
+
 .App {
   text-align: center;
 }
@@ -43,8 +46,10 @@ html {
 }
 
 
-*, h1, h2, h3, a, p, button {
-	font-family: Verdana, Geneva, Tahoma, sans-serif;
+*, h1, h2, h3, a, p, h4, button {
+	font-family: 'Open Sans', sans-serif;
+  font-family: 'Playfair Display', serif;
+  font-family: 'Raleway', sans-serif;;
 }
 
 h1 {

@@ -74,6 +74,7 @@ const Profile = () => {
                 <button className="delete-btn" onClick={() => deletePost(post.id)}>
                   Delete Post
                 </button>
+                <br />
                 <button className="edit-btn" onClick={() => editPost(post.id)}>
                   Edit Post
                 </button>
