@@ -11,7 +11,7 @@ form {
   
   form label {
     font-weight: bold;
-    color: #ff4000;
+    color: limegreen;
   }
   
   form input[type="text"] {
@@ -22,7 +22,7 @@ form {
   }
   
   form button {
-    background-color: #f57145;
+    background-color: #8a300f;
     color: white;
     border: none;
     border-radius: 5px;
@@ -36,10 +36,14 @@ form {
   }
   
   form button[type="button"] {
-    background-color: #ff847c;
+    background-color: #a2fab8;
   }
   
   form button[type="submit"] {
     background-color: #6fcf97;
+  }
+
+  form button[type="submit"]:hover {
+    background-color: limegreen;
   }
   

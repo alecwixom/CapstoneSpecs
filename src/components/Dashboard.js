@@ -14,15 +14,6 @@ const Dashboard = () => {
     const [description, setDesc] = useState('')
     const navigate = useNavigate();
 
-    const handleAddWorkout = () => {
-        setWorkouts([...workouts, { dayOfWeek: "", description: "" }]);
-    };
-
-    const handleRemoveWorkout = (index) => {
-        const updatedWorkouts = [...workouts];
-        updatedWorkouts.splice(index, 1);
-        setWorkouts(updatedWorkouts);
-    };
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -69,14 +60,8 @@ const Dashboard = () => {
                         />
                     </label>
                     <br />
-                    <button type="button" onClick={() => handleRemoveWorkout(index)}>
-                        Remove Workout
-                    </button>
                 </div>
             ))}
-            <button type="button" onClick={handleAddWorkout}>
-                Add Workout
-            </button>
             <br />
             <button type="submit">Submit</button>
         </form>

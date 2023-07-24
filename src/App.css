@@ -42,7 +42,7 @@
 
 /* global styling */
 html {
-  background-color: rgb(36, 56, 36);
+  background-color: #d1fad1;
 }
 
 
@@ -60,6 +60,7 @@ h1 {
 h2 {
   font-size: 1.75rem;
   font-weight: bold;
+  color: hsl(16, 81%, 60%);
 }
 
 h3 {
@@ -69,12 +70,12 @@ h3 {
 
 h4 {
 	font-size: 1.25;
-	color: #ff4000;
+	color: limegreen;
 	padding: 10px;	
 }
 
 a {
-	color: #ffbcbc;
+	color: #d1fad1;
 	text-decoration: none;
 	transition: .3s;
 	font-size: 1rem;
@@ -124,4 +125,8 @@ main {
 
 .main-nav li {
 	padding: 0 10px;
+}
+
+p {
+  color: darkgreen;
 }

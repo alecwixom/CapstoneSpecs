@@ -2,6 +2,7 @@ import { useContext } from "react"
 import { NavLink } from "react-router-dom"
 import AuthContext from "../store/authContext"
 import './navbar.css'
+import workoutpng from '../icon/workouticon.png'
 const Navbar = () => {
 const authCtx = useContext(AuthContext)
 
@@ -11,9 +12,13 @@ const authCtx = useContext(AuthContext)
         }
     }
 
+
     return (
         <header className="navbar flex-row">
             <div className="flex-row">
+                <a target="_blank" href="https://icons8.com/icon/122695/dumbbell">
+                    <img className="logoicon" src={workoutpng} alt="WorkoutPng" />
+                </a>
                 <h3>Lift Share</h3>
             </div>
             <nav>

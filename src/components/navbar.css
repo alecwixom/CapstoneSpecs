@@ -1,6 +1,6 @@
 .navbar {
     height: 70px;
-    background-color: rgba(169, 169, 169, 0.493);
+    background-color: green;
     color: white;
     padding: 0 10px;
   }
@@ -32,12 +32,12 @@
   }
   
   .navbar-link:hover {
-    color: #f57145;
+    color: tomato;
   }
   
   .logout-btn {
-    background-color: #f57145;
-    color: white;
+    background-color: limegreen;
+    color: #d1fad1;
     border: none;
     border-radius: 5px;
     padding: 5px 10px;
@@ -46,4 +46,10 @@
 
   a {
     font-size: larger;
+  }
+
+  .logoicon {
+    width: 50px;
+    height: 50px;
+    padding: 5px;
   }

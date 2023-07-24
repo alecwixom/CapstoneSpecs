@@ -1,5 +1,5 @@
 .post-card {
-    background-color: #f0f0f0;
+    background-color: #baf8ba;
     border-radius: 5px;
     padding: 20px;
     margin-bottom: 20px;
@@ -8,13 +8,21 @@
   .delete-btn,
   .edit-btn {
     margin-top: 10px;
-    background-color: #f57145;
+    background-color: #6fcf97;
     color: white;
     border: none;
     border-radius: 5px;
     padding: 10px 15px;
     cursor: pointer;
     font-size: large;
+  }
+
+  .delete-btn:hover{
+    background-color: red;
+  }
+
+  .edit-btn:hover{
+    background-color: limegreen;
   }
   
   .edit-form {
