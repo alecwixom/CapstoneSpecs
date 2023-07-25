@@ -15,13 +15,17 @@
   
   .form-btn {
     margin-top: 10px;
-    background-color: #f57145;
+    background-color: #6fcf97;
     color: white;
     border: none;
     border-radius: 5px;
     padding: 10px 20px;
     cursor: pointer;
     font-size: large;
+  }
+
+  .form-btn:hover {
+    background-color: limegreen;
   }
   
   .auth-msg {

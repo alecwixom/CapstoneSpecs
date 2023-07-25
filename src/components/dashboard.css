@@ -20,6 +20,13 @@ form {
     width: 100%;
     height: 25px;
   }
+
+  form textarea {
+    margin-top: 5px;
+    padding: 5px;
+    width: 100%;
+    height: 50px;
+  }
   
   form button {
     background-color: #8a300f;

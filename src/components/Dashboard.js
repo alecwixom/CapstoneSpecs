@@ -7,7 +7,7 @@ import './dashboard.css'
 
 const Dashboard = () => {
     const { token, userId } = useContext(AuthContext);
-    const [workouts, setWorkouts] = useState([
+    const [workouts] = useState([
         { dayOfWeek: "", description: "" },
     ]);
     const [dayOfWeek, setDay] = useState('')
@@ -51,8 +51,7 @@ const Dashboard = () => {
                     <br />
                     <label className="form-desc">
                         Workout Description:
-                        <input
-                            type="text"
+                        <textarea
                             value={description}
                             onChange={(e) =>
                                 setDesc(e.target.value)

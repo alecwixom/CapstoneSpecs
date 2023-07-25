@@ -1,13 +1,19 @@
-import React from "react";
-import { useState, useEffect, useContext } from "react";
-
+import React, { useState, useEffect, useContext } from "react";
 import AuthContext from "../store/authContext";
 import axios from "axios";
 import "./home.css";
 
+const nl2br = (str) => {
+    return str.split("\n").map((line, index) => (
+        <React.Fragment key={index}>
+            {line}
+            <br />
+        </React.Fragment>
+    ));
+};
+
 const Home = () => {
     const { userId } = useContext(AuthContext);
-
     const [posts, setPosts] = useState([]);
 
     useEffect(() => {
@@ -33,7 +39,7 @@ const Home = () => {
             <div key={post.id} className="homeposts">
                 <h2>{post.user.username}</h2>
                 <h4>{post.dayOfWeek}</h4>
-                <p>{post.description}</p>
+                <p>{nl2br(post.description)}</p>
             </div>
         );
     });

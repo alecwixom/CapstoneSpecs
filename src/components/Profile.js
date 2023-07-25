@@ -1,12 +1,19 @@
-import { useContext, useEffect, useState, useCallback } from 'react';
-import axios from 'axios';
-import './profile.css'
+import React, { useContext, useEffect, useState, useCallback } from "react";
+import axios from "axios";
+import "./profile.css";
+import AuthContext from "../store/authContext";
 
-import AuthContext from '../store/authContext';
+const nl2br = (str) => {
+  return str.split("\n").map((line, index) => (
+    <React.Fragment key={index}>
+      {line}
+      <br />
+    </React.Fragment>
+  ));
+};
 
 const Profile = () => {
   const { userId, token } = useContext(AuthContext);
-
   const [posts, setPosts] = useState([]);
   const [editedPost, setEditedPost] = useState(null);
 
@@ -14,30 +21,30 @@ const Profile = () => {
     axios
       .get(`http://localhost:4001/userposts/${userId}`, {
         headers: {
-          authorization: token
-        }
+          authorization: token,
+        },
       })
-      .then(res => setPosts(res.data))
-      .catch(err => console.log(err));
+      .then((res) => setPosts(res.data))
+      .catch((err) => console.log(err));
   }, [userId, token]);
 
-  const deletePost = id => {
+  const deletePost = (id) => {
     axios
       .delete(`http://localhost:4001/posts/${id}`, {
         headers: {
-          authorization: token
-        }
+          authorization: token,
+        },
       })
       .then(() => {
         getUserPosts();
       })
-      .catch(err => {
+      .catch((err) => {
         console.log(err);
       });
   };
 
-  const editPost = id => {
-    const postToEdit = posts.find(post => post.id === id);
+  const editPost = (id) => {
+    const postToEdit = posts.find((post) => post.id === id);
     setEditedPost(postToEdit);
   };
 
@@ -45,14 +52,14 @@ const Profile = () => {
     axios
       .put(`http://localhost:4001/posts/${editedPost.id}`, editedPost, {
         headers: {
-          authorization: token
-        }
+          authorization: token,
+        },
       })
       .then(() => {
         setEditedPost(null);
         getUserPosts();
       })
-      .catch(err => {
+      .catch((err) => {
         console.log(err);
       });
   };
@@ -65,13 +72,16 @@ const Profile = () => {
     <main>
       {posts.length >= 1 ? (
         <div>
-          {posts.map(post => (
+          {posts.map((post) => (
             <div key={post.id} className="post-card">
               <h2>{post.user.username}</h2>
               <h4>{post.dayOfWeek}</h4>
-              <p>{post.description}</p>
+              <p>{nl2br(post.description)}</p>
               <div>
-                <button className="delete-btn" onClick={() => deletePost(post.id)}>
+                <button
+                  className="delete-btn"
+                  onClick={() => deletePost(post.id)}
+                >
                   Delete Post
                 </button>
                 <br />
@@ -94,20 +104,19 @@ const Profile = () => {
           <input
             type="text"
             value={editedPost.dayOfWeek}
-            onChange={e =>
-              setEditedPost(prevState => ({
+            onChange={(e) =>
+              setEditedPost((prevState) => ({
                 ...prevState,
-                dayOfWeek: e.target.value
+                dayOfWeek: e.target.value,
               }))
             }
           />
-          <input
-            type="text"
+          <textarea
             value={editedPost.description}
-            onChange={e =>
-              setEditedPost(prevState => ({
+            onChange={(e) =>
+              setEditedPost((prevState) => ({
                 ...prevState,
-                description: e.target.value
+                description: e.target.value,
               }))
             }
           />
