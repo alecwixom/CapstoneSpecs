@@ -1,55 +1,62 @@
 .navbar {
-    height: 70px;
-    background-color: green;
-    color: white;
-    padding: 0 10px;
-  }
-  
-  .navbar-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 100%;
-  }
-  
-  .navbar-logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-  }
-  
-  .navbar-links {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    
-  }
-  
-  .navbar-link {
-    margin-left: 20px;
-    color: white;
-    text-decoration: none;
-    transition: color 0.3s;
-  }
-  
-  .navbar-link:hover {
-    color: tomato;
-  }
-  
-  .logout-btn {
-    background-color: limegreen;
-    color: #d1fad1;
-    border: none;
-    border-radius: 5px;
-    padding: 5px 10px;
-    cursor: pointer;
-  }
+  height: 70px;
+  background-color: green;
+  color: white;
+  padding: 0 10px;
+}
 
-  a {
-    font-size: larger;
-  }
+.navbar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
 
-  .logoicon {
-    width: 50px;
-    height: 50px;
-    padding: 5px;
-  }
+.navbar-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.navbar-links {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+}
+
+.navbar-link {
+  margin-left: 20px;
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.navbar-link:hover {
+  color: tomato;
+}
+
+.logout-btn {
+  background-color: limegreen;
+  color: #d1fad1;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+a {
+  font-size: larger;
+}
+
+.logoicon {
+  width: 50px;
+  height: 50px;
+  padding: 5px;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+.logoname {
+  font-family: 'Montserrat', sans-serif;
+}

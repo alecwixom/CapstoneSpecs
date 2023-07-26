@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import AuthContext from "../store/authContext";
 import axios from "axios";
-import "./home.css";
+import styles from "./home.module.css";
 
 const nl2br = (str) => {
     return str.split("\n").map((line, index) => (
@@ -18,11 +18,11 @@ const Home = () => {
 
     useEffect(() => {
         axios
-            .get("http://localhost:4001/posts")
+            .get(`http://localhost:4001/posts`)
             .then((res) => {
                 if (userId) {
                     const otherUserPosts = res.data.filter(
-                        (post) => userId !== post.userId
+                        (post) => userId !== post.user.username
                     );
                     setPosts(otherUserPosts);
                 } else {
@@ -34,18 +34,30 @@ const Home = () => {
             });
     }, [userId]);
 
+    const handleCopyToDashboard = (dayOfWeek, description) => {
+        window.location.href = `/dashboard?dayOfWeek=${encodeURIComponent(
+            dayOfWeek
+        )}&description=${encodeURIComponent(description)}`;
+    };
+
     const mappedPosts = posts.map((post) => {
+        const { id, user, dayOfWeek, description } = post;
         return (
-            <div key={post.id} className="homeposts">
-                <h2>{post.user.username}</h2>
-                <h4>{post.dayOfWeek}</h4>
-                <p>{nl2br(post.description)}</p>
+            <div key={id} className={styles["homeposts"]}>
+                <h2>{user.username}</h2>
+                <h4>{dayOfWeek}</h4>
+                <p>{nl2br(description)}</p>
+                {userId && (
+                    <button onClick={() => handleCopyToDashboard(dayOfWeek, description)}>
+                        Copy
+                    </button>
+                )}
             </div>
         );
     });
 
     return mappedPosts.length >= 1 ? (
-        <main>{mappedPosts}</main>
+        <main className={styles["main-grid"]}>{mappedPosts}</main>
     ) : (
         <main>
             <h4>

@@ -16,14 +16,14 @@ const App = () => {
 
   return (
     <div className="App">
-      <Navbar/>
-        <Routes>
-          <Route path='/' element={<Home/>}/>
-          <Route path='/login' element={!authCtx.token ? <Auth/> : <Navigate to='/Auth'/>}/>
-          <Route path='/Dashboard' element={authCtx.token ? <Dashboard/> : <Navigate to='/auth'/>}/>
-          <Route path='/Profile' element={authCtx.token ? <Profile/> : <Navigate to='/auth'/> } />
-          <Route path='*' element={<Navigate to='/'/>} />
-        </Routes>
+      <Navbar />
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/login' element={!authCtx.token ? <Auth /> : <Navigate to='/Auth' />} />
+        <Route path='/Dashboard' element={authCtx.token ? <Dashboard /> : <Navigate to='/auth' />} />
+        <Route path='/Profile' element={authCtx.token ? <Profile /> : <Navigate to='/auth' />} />
+        <Route path='*' element={<Navigate to='/' />} />
+      </Routes>
     </div>
   )
 }

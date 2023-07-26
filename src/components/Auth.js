@@ -40,24 +40,24 @@ const Auth = () => {
         <main>
             <h3>Welcome!</h3>
             <form className='form auth-form' onSubmit={submitHandler}>
-                <input 
-                    type='text' 
-                    placeholder='username' 
+                <input
+                    type='text'
+                    placeholder='username'
                     value={username}
                     onChange={e => setUsername(e.target.value)}
-                    className='form-input'/>
-                    <br />
-                <input 
-                    type='password' 
-                    placeholder='password' 
+                    className='form-input' />
+                <br />
+                <input
+                    type='password'
+                    placeholder='password'
                     value={password}
                     onChange={e => setPassword(e.target.value)}
-                    className='form-input'/>
+                    className='form-input' />
                 <button className='form-btn'>
                     {register ? 'Sign Up' : 'Login'}
                 </button>
             </form>
-            <p style={{display: display}} className='auth-msg'>{message}</p>
+            <p style={{ display: display }} className='auth-msg'>{message}</p>
             <button className='form-btn' onClick={() => setRegister(!register)}>
                 Need to {register ? 'Login' : 'Sign Up'}?
             </button>
